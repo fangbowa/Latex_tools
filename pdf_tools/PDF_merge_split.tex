@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{pdfpages}
+
+%there is bug. If you print some PDFs by yourself on the computer and try to use script to merge, there will be an error.
+%Now it only works well with downloaded PDFs from third parties, such as journal papers.
+
+
+\begin{document}
+
+%merge the PDF
+\includepdfmerge{11.pdf, -}
+\includepdfmerge{1.pdf, 4-919}
+%\includepdfmerge{3.pdf, -}
+
+% split  the PDF
+%\includepdfmerge{1.pdf, 4-919}
+
+
+\end{document}

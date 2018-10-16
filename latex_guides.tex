@@ -1,0 +1,286 @@
+\documentclass[12pt]{article}
+%	options include 12pt or 11pt or 10pt
+%	classes include article, report, book, letter, thesis
+
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+%\usepackage{graphics}
+%\usepackage{subfigure}
+\usepackage{bm}
+\usepackage{subfig}
+\usepackage{float}
+
+
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{xcolor}
+
+\usepackage{IEEEtrantools}
+
+%\usepackage{titlesec}
+%\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}{\normalfont\normal\bfseries}{\thesubsection}{1em}{}
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+%to change the color of citation number, equation number
+\usepackage[colorlinks=true,urlcolor=purple,citecolor=green,linkcolor=blue]{hyperref}
+
+\usepackage{listings}
+\lstset
+{
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{magenta},
+    identifierstyle=\color{blue},
+    frame=single
+}
+
+\setlength{\parindent}{0pt}   %indent space
+\setlength{\parskip}{1em}     %top, bottom space
+\renewcommand{\baselinestretch}{1.0} % line spacing
+
+
+\title{Fangbo's \LaTeX{} template}
+\author{Fangbo Wang \\   }
+\date{November 2017}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Introduction}
+aaaa
+\section{Spacing and font size}
+
+\subsection{For paragraph}
+The most useful three commands
+\begin{lstlisting}
+\setlength{\parindent}{0pt}   %indent space
+\setlength{\parskip}{1em}     %top, bottom space
+\renewcommand{\baselinestretch}{1.0} % line spacing
+\end{lstlisting}
+
+\subsection{For heading}
+use package \textit{titlesec} and commands \textit{titleformat}, \textit{titlespacing}
+\begin{lstlisting}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normal\bfseries}{\thesubsection}{1em}{}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\end{lstlisting}
+
+
+\section{Colored hyperlinks for figures, tables, citations}
+use hyperref package to change the default color and set hyperlinks
+%\begin{lstlisting}[language=LaTeX]
+\begin{lstlisting}
+\usepackage[colorlinks=true,urlcolor=purple,citecolor=green,linkcolor=blue]{hyperref}
+\end{lstlisting}
+
+
+\section{Citation}
+
+1. write and cite a reference in this file itself. \cite{sett}
+\begin{lstlisting}
+\begin{thebibliography}{9}
+\bibitem{sett} 
+Arezoo Sadrinezhad, Kallol Sett and S. I. Hariharan. 
+Efficient solution algorithms for multiaxial probablistic elasto-plastic constitutive simulations of soils.
+\textit{Int J Numer Anal Mech Geomech}. 2017; 0:1-21.
+\end{thebibliography}
+\end{lstlisting}
+
+
+\section{Display code}
+In the preamble part, paste this
+\begin{lstlisting}
+\usepackage{listings}
+\lstset
+{
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{magenta},
+    identifierstyle=\color{blue},
+    frame=single
+}
+\end{lstlisting}
+
+When pasting code in document, use begin\{lstlisting\} and end\{lstlisting\}
+
+\begin{lstlisting}[language=Matlab]
+
+clc; clear;
+leftbound=-20; rightbound=20; meshpoint=2000;
+stressmesh=linspace(leftbound, rightbound, meshpoint);
+% standard normal assumption;
+u00=exp(-stressmesh.*stressmesh/2)/sqrt(2*pi); 
+timestart=10; dt=0.01;
+N1=100;  N2=1;        
+
+\end{lstlisting}
+
+
+
+\section{Equations}
+
+\subsection{one short equation (use \textit{equation})}
+\begin{equation}
+c=a+b
+\end{equation}
+
+\begin{lstlisting}
+\begin{equation}
+c=a+b
+\end{equation}
+\end{lstlisting}
+
+\subsection{one long equation (use \textit{multiline})}
+\begin{multline}
+p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3 + 590x^4y^2 + 19x^3y^3\\ 
+- 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
+\end{multline}
+
+\begin{lstlisting}
+\begin{multline}
+p(x) = 3x^6 + 14x^5y + 590x^4y^2 + 19x^3y^3 + 590x^4y^2 + 19x^3y^3\\ 
+- 12x^2y^4 - 12xy^5 + 2y^6 - a^3b^3
+\end{multline}
+\end{lstlisting}
+
+\subsection{multiple equations (use \textit{eqnarray} ,\textit{align}, \textit{gather})}
+
+\begin{align}
+a & = b + c \\
+& = d + e
+\end{align}
+
+\begin{lstlisting}
+\begin{align}
+a & = b + c \\
+& = d + e
+\end{align}
+\end{lstlisting}
+
+\begin{gather*} 
+2x - 5y =  8 \\ 
+3x^2 + 9y =  3a + c
+\end{gather*}
+
+\begin{lstlisting}
+\begin{gather} 
+2x - 5y =  8 \\ 
+3x^2 + 9y =  3a + c
+\end{gather}
+\end{lstlisting}
+
+\begin{eqnarray}
+a & = & b + c \\
+& = & d + e
+\label{eq:faultyeqnarray}
+\end{eqnarray}
+
+\begin{lstlisting}
+\begin{eqnarray}
+a & = & b + c \\
+& = & d + e
+\end{eqnarray}
+\end{lstlisting}
+
+Note that \textit{align} only needs one \&, \textit{eqnarray} needs two \&.
+Although the above commands work most of the time, it is recommmended to use \textit{IEEEeqnarray}. Read $<<$ How to typeset equations in Latex, Stefan Moser$>>$ for typing complex equations.
+
+\begin{IEEEeqnarray}{rCl}
+N_{(1)_m}^{q^{eq}} &=& P[f>0] N_{(1)_{m}}^{q^{ep}}  \\
+N_{(2)_{mn}}^{q^{eq}} &=& P[f>0] N_{(2)_{mn}}^{q^{ep}}
+\end{IEEEeqnarray}
+
+\begin{lstlisting}
+\begin{IEEEeqnarray}{rCl}
+N_{(1)_m}^{q^{eq}} &=& P[f>0] N_{(1)_{m}}^{q^{ep}}  \\
+N_{(2)_{mn}}^{q^{eq}} &=& P[f>0] N_{(2)_{mn}}^{q^{ep}}
+\end{IEEEeqnarray}
+\end{lstlisting}
+
+
+\subsection{Collection of some equations}
+
+\begin{eqnarray}
+D_{ijkl} = 
+\left\{
+\begin{array}{ll}
+a \\
+b
+\end{array} 
+\right.
+\end{eqnarray}
+
+\begin{lstlisting}
+\begin{eqnarray}
+D_{ijkl} = 
+\left\{
+\begin{array}{ll}
+a \\
+b
+\end{array} 
+\right.
+\end{eqnarray}
+\end{lstlisting}
+
+
+\begin{align}
+x&=y           &  w &=z              &  a&=b+c\\
+2x&=-y         &  3w&=\frac{1}{2}z   &  a&=b\\
+-4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
+\end{align}
+
+\begin{lstlisting}
+\begin{align}
+x&=y           &  w &=z              &  a&=b+c\\
+2x&=-y         &  3w&=\frac{1}{2}z   &  a&=b\\
+-4 + 5x&=2+y   &  w+2&=-1+w          &  ab&=cb
+\end{align}
+\end{lstlisting}
+
+
+\section{Making handouts for beamer presentations}
+
+Ever wondered how to avoid the overlays when you want a printout from your beamer presentation?
+Just put the handout option in your beamer presentation.
+\begin{lstlisting}
+\documentclass[12pt,handout]{beamer}
+\end{lstlisting}
+
+If you then want t o also print everything on one page (as Steve did for his Away Day talk) then just do this
+\begin{lstlisting}[language=Tex]
+\documentclass[a4paper]{article}
+\usepackage{pdfpages}
+ 
+\begin{document}
+\includepdf[pages=1­-last,nup=2x2,landscape=false,frame=true,
+            noautoscale=true,scale=0.6,delta=0mm 5mm]{mypresentation.pdf}
+\end{document}
+\end{lstlisting}
+where mypresentation.pdf is your beamer presentation which you created with the handout options (so without overlays).
+In this example 4 beamer slides are printed on one page (2x2).
+
+\begin{thebibliography}{9}
+\bibitem{sett} 
+Arezoo Sadrinezhad, Kallol Sett and S. I. Hariharan. 
+Efficient solution algorithms for multiaxial probablistic elasto-plastic constitutive simulations of soils.
+\textit{Int J Numer Anal Mech Geomech}. 
+2017; 0:1-21.
+ 
+\bibitem{Fu} 
+Chuli Fu, Xiangtuan Xiong and Zhi Qian. 
+Fourier regularization for a backward heat equation.
+\textit{Jounal of Mathematical Analysis and Applications}. 
+2007; 331:471-480.
+
+
+\end{thebibliography}
+
+
+\end{document}

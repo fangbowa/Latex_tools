@@ -1,0 +1,23 @@
+#!/bin/csh
+#
+# cleantex - clean up files related to Latex processing
+#
+# usage - cleantex [base]...
+# default is \*, ie, to remove all latex extraneous files. 
+# Otherwise, those beginning with 'base.' are removed.
+#
+# No csh -f flag so that we get safe-rm instead of rm, where appropriate.
+
+set extensions="{dvi,aux,log,toc,lof,bbl,blg,lot,glo,idx,bix,ttt,fff,nav,snm,out,vrb,bak,idv,lg,4tc,xref,4ct,tmp,ilg,ind,bcf,spl,ptc}"
+
+if ($#argv == 0) then
+	   rm -f *.$extensions
+	   rm -f *-blx.bib 
+	   rm -f *.run.xml 
+else
+	   foreach i ($*)
+	   	   rm -f $i.$extensions
+	   	   rm -f $i-blx.bib
+	   	   rm -f $i.run.xml
+	   end
+endif
