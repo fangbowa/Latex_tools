@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Spacing and font size}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{For paragraph}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{For heading}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Colored hyperlinks for figures, tables, citations}{}% 5
+\BOOKMARK [1][-]{section.4}{Citation}{}% 6
+\BOOKMARK [1][-]{section.5}{Display code}{}% 7
+\BOOKMARK [1][-]{section.6}{Equations}{}% 8
+\BOOKMARK [2][-]{subsection.6.1}{one short equation \(use equation\)}{section.6}% 9
+\BOOKMARK [2][-]{subsection.6.2}{one long equation \(use multiline\)}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.3}{multiple equations \(use eqnarray ,align, gather\)}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.4}{Collection of some equations}{section.6}% 12
+\BOOKMARK [1][-]{section.7}{Making handouts for beamer presentations}{}% 13

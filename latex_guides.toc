@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Spacing and font size}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}For paragraph}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}For heading}{3}{subsection.2.2}
+\contentsline {section}{\numberline {3}Colored hyperlinks for figures, tables, citations}{3}{section.3}
+\contentsline {section}{\numberline {4}Citation}{4}{section.4}
+\contentsline {section}{\numberline {5}Display code}{4}{section.5}
+\contentsline {section}{\numberline {6}Equations}{5}{section.6}
+\contentsline {subsection}{\numberline {6.1}one short equation (use \textit {equation})}{5}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}one long equation (use \textit {multiline})}{5}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}multiple equations (use \textit {eqnarray} ,\textit {align}, \textit {gather})}{5}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Collection of some equations}{6}{subsection.6.4}
+\contentsline {section}{\numberline {7}Making handouts for beamer presentations}{7}{section.7}
